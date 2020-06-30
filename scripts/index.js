@@ -20,6 +20,8 @@ const setupBooks = (data) => {
             <div class="collapsible-body white">
                 <p>${book.author}</p>
                 <p>${book.issuedBy}</p>
+                <p>${book.issueDate}</p>
+                <p>${book.phone}</p>
             </div>         
         </li>`;
         html += li; 
