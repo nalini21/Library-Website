@@ -1,0 +1,34 @@
+  .collapsible-header{
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+  }
+  .collapsible-header.issued{
+    color:red;     
+  }
+  .collapsible-header.available{
+    color:green;
+  }
+  .subheader{     
+    color: grey;
+    font-family: cursive;
+    position: relative;
+    margin-top: 15px;
+    font-size: small;
+    font-weight: normal;
+  }
+  .btn-floating{
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+  .material-icons.fav{
+    margin-left: 1px;
+  }
+  .container.list{
+    padding-bottom: 200px;
+  }
+  #aboutData > p{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
