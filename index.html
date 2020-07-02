@@ -18,13 +18,16 @@
         <!-- <img src="img/logo.svg" style="width: 180px; margin-top: 10px;"> -->
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in ver" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-ver">Verify</a>
+          </li>
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
           </li>
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
-          <li class="logged-in" style="display: none;">
+          <li class="logged-in add" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-add">Add Book</a>
           </li>
           <li class="logged-out" style="display: none;">
@@ -77,11 +80,20 @@
   <!-- ACCOUNT MODAL -->
   <div id="modal-account" class="modal">
     <div class="modal-content center-align" id="aboutData">
-      <!-- <h4>Account details</h4><br /> -->
-      
       <div class="account-details"></div>
     </div>
   </div>
+  
+  <!-- VERIFICATION MODAL -->
+  <div id="modal-ver" class="modal">
+    <div class="modal-content center-align" id="verify">
+      <div class="container" style="height: 100px;" >
+        <button class="btn green darken-2 left" id="send">Send Verification Link</button></br></br>
+        <button class="btn red darken-2 left"  style="margin-top: 10px;">Delete Account</button>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ADD BOOK MODAL -->
   <div id="modal-add" class="modal">

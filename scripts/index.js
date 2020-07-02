@@ -2,7 +2,9 @@ const bookList = document.querySelector('.books');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const about = document.getElementById("aboutData");
-
+const verification = document.querySelectorAll('.ver');
+const addBook = document.querySelectorAll('.add');
+const verButton = document.querySelector('#send');
 const setupUI = (user) =>{
     if(user){
         loggedInLinks.forEach(item => {
@@ -11,6 +13,31 @@ const setupUI = (user) =>{
             item.style.fontWeight="bold";
         });
         loggedOutLinks.forEach(item => item.style.display="none");
+        if(!user.emailVerified){
+            verification.forEach(item => {
+                item.style.display="block";
+                item.style.color ="grey";
+                item.style.fontWeight="bold";
+            });
+            addBook.forEach(item=>{
+                item.style.display="none";
+            });
+        const html= `<li><div class="container center green-text" >
+                        <h4>Verify your email to see the content</h4>
+                        </div>
+                     </li>`;
+            bookList.innerHTML = html;
+        }
+        else{
+            verification.forEach(item => {
+                item.style.display="none";
+            });
+            addBook.forEach(item=>{
+                item.style.display="block";
+                item.style.color ="grey";
+                item.style.fontWeight="bold";
+            });
+        }
     }
     else{
         loggedInLinks.forEach(item => item.style.display="none");
@@ -59,7 +86,7 @@ const setupBooks = (data) => {
     }
     else{
           html= `<li><div class="container center red-text" >
-          <h4>Register or Login to see the book list</h4>
+          <h4>Register or Login to see the content</h4>
           </div></li>`
     }
     bookList.innerHTML = html;
@@ -82,3 +109,20 @@ document.addEventListener('DOMContentLoaded',function(){
     M.Collapsible.init(items);
 
 });
+
+verButton.addEventListener('click',(evt) => {
+    evt.preventDefault();
+    send_verification();
+    const modal = document.querySelector('#modal-ver');
+    M.Modal.getInstance(modal).close(); 
+}
+    );
+
+function send_verification() {
+    var user = auth.currentUser;
+    user.sendEmailVerification().then(function () {
+        window.alert('email verification link sent to your email id');
+    }).catch(function (error) {
+        window.alert(error.message);
+    });
+}
