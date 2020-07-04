@@ -4,10 +4,12 @@
     letter-spacing: 1px;
   }
   .collapsible-header.issued{
-    color:red;     
+    color: hotpink;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
   }
   .collapsible-header.available{
-    color:green;
+    color: darkturquoise;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
   }
   .subheader{     
     color: grey;
@@ -31,4 +33,13 @@
     font-style: italic;
     font-weight: bold;
     font-size: 1.5rem;
+  }
+  .issueData{
+    font-weight: normal; 
+    letter-spacing: 1px; 
+    font-size: 0.9rem;
+  }
+  .saveButton{
+    margin-top: 20px;
+    margin-left: 30px;
   }

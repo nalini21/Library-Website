@@ -30,6 +30,9 @@
           <li class="logged-in add" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-add">Add Book</a>
           </li>
+          <li class="logged-in addFav" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-addFav">Add Favorites</a>
+          </li>
           <li class="logged-out" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
           </li>
@@ -44,17 +47,21 @@
   <!-- SIGN UP MODAL -->
   <div id="modal-signup" class="modal">
     <div class="modal-content">
-      <h4>Register</h4><br />
+      <h4 class="green-text" style="font-weight: bolder;">Register</h4><br />
       <form id="signup-form">
+        <!-- <div class="input-field">
+          <input type="text" id="signup-name" required />
+          <label for="signup-name">Enter Your username</label>
+        </div> -->
         <div class="input-field">
           <input type="email" id="signup-email" required />
-          <label for="signup-email">Email address</label>
+          <label for="signup-email">Enter Your email address</label>
         </div>
         <div class="input-field">
           <input type="password" id="signup-password" required />
           <label for="signup-password">Choose password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Register</button>
+        <button class="btn green waves-effect waves-light">Register</button>
       </form>
     </div>
   </div>
@@ -62,17 +69,17 @@
   <!-- LOGIN MODAL -->
   <div id="modal-login" class="modal">
     <div class="modal-content">
-      <h4>Login</h4><br />
+      <h4  class="blue-text" style="font-weight: bolder;">Login</h4></br>
       <form id="login-form">
         <div class="input-field">
           <input type="email" id="login-email" required />
-          <label for="login-email">Email address</label>
+          <label for="login-email">Enter Your email address</label>
         </div>
         <div class="input-field">
           <input type="password" id="login-password" required />
-          <label for="login-password">Your password</label>
+          <label for="login-password">Enter Your password</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">Login</button>
+        <button class="btn blue waves-effect waves-light">Login</button>
       </form>
     </div>
   </div>
@@ -89,7 +96,7 @@
     <div class="modal-content center-align" id="verify">
       <div class="container" style="height: 100px;" >
         <button class="btn green darken-2 left" id="send">Send Verification Link</button></br></br>
-        <button class="btn red darken-2 left"  style="margin-top: 10px;">Delete Account</button>
+        <button class="btn red darken-2 left"  id="del" style="margin-top: 10px;">Delete Account</button>
       </div>
     </div>
   </div>
@@ -109,6 +116,24 @@
           <label for="author">Book Author</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">add</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADD FAV BOOK MODAL -->
+  <div id="modal-addFav" class="modal">
+    <div class="modal-content">
+      <h4>Add Your Favourite Book</h4><br />
+      <form id="addFav-form">
+        <div class="input-field">
+          <input type="text" id="bookId" required>
+          <label for="BookId">Book Id</label>
+        </div>
+        <!-- <div class="input-field">
+          <textarea id="author" class="materialize-textarea" required></textarea>
+          <label for="author">Book Author</label>
+        </div> -->
+        <button class="btn yellow darken-2">Add</button>
       </form>
     </div>
   </div>

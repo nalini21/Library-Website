@@ -1,31 +1,53 @@
-
-
 //listen for auth changes
 auth.onAuthStateChanged(user => {
     if (user) {
-        //if (user.emailVerified) {
-            //console.log(user);
-            db.collection('books').onSnapshot(snapshot => {
-                setupBooks(snapshot.docs);
-            },err =>{
-                console.log(err.message);
+        console.log(user);
+        db.collection('books').onSnapshot(snapshot => {
+            setupBooks(snapshot.docs);
+            document.querySelectorAll('.editButton').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const id =item.getAttribute('bookId');
+                    console.log(id);
+                    console.log('clicked');
+                });
             });
-            setupUI(user);
-            setupAccount(user);
-        //}
-        // else{
-        //     setupUI();
-        //     setupBooks([]);
-        //     window.alert('verify your email to see the content');
-        //     console.log(user);    
-        // }
+
+            
+        }, err => {
+            console.log(err.message);
+        });
+        setupUI(user);
     }
     else {
         setupUI();
         setupBooks([]);
-        console.log('user is logged out');       
+        console.log('user is logged out');
     }
 });
+
+// const signupForm = document.querySelector('#signup-form');
+// signupForm.addEventListener('submit', (evt) => {
+//     evt.preventDefault();
+//     //user info
+//     const email = signupForm['signup-email'].value;
+//     const password = signupForm['signup-password'].value; 
+//     //sign up user
+//     auth.createUserWithEmailAndPassword(email, password).then(cred => {
+//         db.collection('users').doc(cred.user.uid).set({
+//             name: signupForm['signup-name'].value,
+//         });
+//     }).then(() => {
+//         console.log('username added');                             
+//     }).catch(error => {
+//         console.log(error.message);
+//     });;
+//     //close the modal
+//     const modal = document.querySelector('#modal-signup');
+//     M.Modal.getInstance(modal).close();
+//     signupForm.reset();
+// });
+
 
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (evt) => {
@@ -35,17 +57,19 @@ signupForm.addEventListener('submit', (evt) => {
     const password = signupForm['signup-password'].value;
     //sign up user
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        return db.collection('users').doc(cred.user.uid).set({
-            bio: "hero yui",
-        });
-        }).then(()=>{
-        //cosole.log('');                             
+        const modal = document.querySelector('#modal-signup');
+        M.Modal.getInstance(modal).close();
+        signupForm.reset();
+    }).catch(error => {
+        console.log(error.message);
     });
-             //close the modal
-            const modal = document.querySelector('#modal-signup');
-            M.Modal.getInstance(modal).close();
-            signupForm.reset(); 
 });
+
+// db.collection('users').add({
+//     bio: signupForm['signup-name'].value,
+//     id: cred.user.uid        }).then(() => {
+
+// });
 
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (evt) => {
@@ -71,22 +95,35 @@ const addForm = document.querySelector("#add-form");
 addForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     var user = firebase.auth().currentUser;
-        db.collection('books').add({
-            name: addForm['title'].value,
-            author: addForm['author'].value,
-            status: "false",
-            issueDate: "",
-            issuedBy: "",
-            phone: ""
-        }).then(() => {
-            const modal = document.querySelector('#modal-add');
-            M.Modal.getInstance(modal).close();
-            addForm.reset();
-        }).catch(error=>{
-            console.log('you are not admin');
-        });
-        const modal = document.querySelector('#modal-add');
-        M.Modal.getInstance(modal).close();
-        addForm.reset();
+    db.collection('books').add({
+        name: addForm['title'].value,
+        author: addForm['author'].value,
+        status: "false",
+        issueDate: "",
+        issuedBy: "",
+        phone: ""
+    }).then(() => {
+    }).catch(error => {
+        console.log('you are not admin');
+    });
+    const modal = document.querySelector('#modal-add');
+    M.Modal.getInstance(modal).close();
+    addForm.reset();
+});
+
+const addfavForm = document.querySelector("#addFav-form");
+addfavForm.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    var user = auth.currentUser;
+    db.collection('users').doc(user.uid).collection('favorites').add({
+        bookId: addfavForm['bookId'].value,
+    }).then(() => {
+        console.log('users collection updated')
+    }).catch(error => {
+        console.log(error.message);
+    });
+    const modal = document.querySelector('#modal-addFav');
+    M.Modal.getInstance(modal).close();
+    addfavForm.reset();
 })
 
