@@ -1,10 +1,11 @@
 const bookList = document.querySelector('.books');
+const favList = document.querySelector('.favlist');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const about = document.getElementById("aboutData");
 const verification = document.querySelectorAll('.ver');
+const fav = document.querySelectorAll('.fav');
 const addBook = document.querySelectorAll('.add');
-const addFav = document.querySelectorAll('.addFav');
 const verButton = document.querySelector('#send');
 const delButton = document.querySelector('#del');
 
@@ -29,10 +30,10 @@ const setupUI = (user) => {
                 item.style.color = "grey";
                 item.style.fontWeight = "bold";
             });
-            addBook.forEach(item => {
+            fav.forEach(item => {
                 item.style.display = "none";
             });
-            addFav.forEach(item => {
+            addBook.forEach(item => {
                 item.style.display = "none";
             });
             const html = `<li><div class="container center green-text" >
@@ -41,17 +42,19 @@ const setupUI = (user) => {
                         </div>
                      </li>`;
             bookList.innerHTML = html;
+
+
         }
         else {
             verification.forEach(item => {
                 item.style.display = "none";
             });
-            addBook.forEach(item => {
+            fav.forEach(item => {
                 item.style.display = "block";
                 item.style.color = "grey";
                 item.style.fontWeight = "bold";
             });
-            addFav.forEach(item => {
+            addBook.forEach(item => {
                 item.style.display = "block";
                 item.style.color = "grey";
                 item.style.fontWeight = "bold";
@@ -65,7 +68,7 @@ const setupUI = (user) => {
             item.style.color = "grey";
             item.style.fontWeight = "bold";
         });
-        let html = '';
+        let html = ``;
         about.innerHTML = html;
     }
 }
@@ -86,7 +89,7 @@ const setupBooks = (data) => {
             let li = `
         <li>
             <div class="collapsible-header grey-lighten-4 ${cls}">
-            <i class="material-icons saveButton">bookmark_border</i>   
+            <i class="material-icons saveButton" id="${doc.id}">bookmark</i>   
                 <div class="container">
                 <p>${book.name}</p>
                 <div class="subheader"> ~ ${book.author}</div>
@@ -116,6 +119,31 @@ const setupBooks = (data) => {
     bookList.innerHTML = html;
 }
 
+
+const setupFav = (data) => {
+
+    if (data.length) {
+        favList.innerHTML = ``;
+        data.forEach(doc => {
+            let li = document.createElement('li');
+            let name = document.createElement('span');
+            let author = document.createElement('span');
+            let sp = document.createElement('br');
+            const bookID = doc.id;
+            db.collection('books').doc(bookID).get().then(doc => {
+                console.log(doc.data().name);
+                console.log(doc.data().author);
+                name.textContent = doc.data().name;
+                author.textContent = doc.data().author;
+            });
+            li.appendChild(name);
+            li.appendChild(sp);
+            li.appendChild(author);
+            favList.appendChild(li);
+        });
+
+    }
+}
 //setting materialize
 document.addEventListener('DOMContentLoaded', function () {
     var modals = document.querySelectorAll('.modal');
@@ -166,3 +194,10 @@ delButton.addEventListener('click', (evt) => {
 //         console.log(err.message);
 //     });
 // });
+
+{/* <li>   
+            <div class="container">
+            <p>${name}</p>
+            <div class="subheader"> ~ ${author}</div>
+            </div>
+        </li> */}

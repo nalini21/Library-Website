@@ -40,6 +40,12 @@
     font-size: 0.9rem;
   }
   .saveButton{
+    color:rgb(192, 192, 206);
     margin-top: 20px;
     margin-left: 30px;
+  }
+  .saveButton.clicked{
+    margin-top: 20px;
+    margin-left:30px;
+    color:lightseagreen;
   }

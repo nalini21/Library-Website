@@ -24,14 +24,14 @@
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
           </li>
+          <li class="logged-in fav" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-favorites">Bookmarked</a>
+          </li>
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
           <li class="logged-in add" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-add">Add Book</a>
-          </li>
-          <li class="logged-in addFav" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-addFav">Add Favorites</a>
           </li>
           <li class="logged-out" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
@@ -49,10 +49,6 @@
     <div class="modal-content">
       <h4 class="green-text" style="font-weight: bolder;">Register</h4><br />
       <form id="signup-form">
-        <!-- <div class="input-field">
-          <input type="text" id="signup-name" required />
-          <label for="signup-name">Enter Your username</label>
-        </div> -->
         <div class="input-field">
           <input type="email" id="signup-email" required />
           <label for="signup-email">Enter Your email address</label>
@@ -90,6 +86,14 @@
       <div class="account-details"></div>
     </div>
   </div>
+
+  <!-- FAVORITES MODAL -->
+  <div id="modal-favorites" class="modal">
+    <div class="modal-content center-align" id="favoritesData">
+        <ul class="favlist"></ul>
+      </div>
+    </div>
+  
   
   <!-- VERIFICATION MODAL -->
   <div id="modal-ver" class="modal">
@@ -116,24 +120,6 @@
           <label for="author">Book Author</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">add</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ADD FAV BOOK MODAL -->
-  <div id="modal-addFav" class="modal">
-    <div class="modal-content">
-      <h4>Add Your Favourite Book</h4><br />
-      <form id="addFav-form">
-        <div class="input-field">
-          <input type="text" id="bookId" required>
-          <label for="BookId">Book Id</label>
-        </div>
-        <!-- <div class="input-field">
-          <textarea id="author" class="materialize-textarea" required></textarea>
-          <label for="author">Book Author</label>
-        </div> -->
-        <button class="btn yellow darken-2">Add</button>
       </form>
     </div>
   </div>
