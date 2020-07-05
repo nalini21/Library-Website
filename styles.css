@@ -53,22 +53,12 @@
  
 .favlist > li{
     padding: 5px;
-    /* background: rgb(128, 207, 221); */
     font-size: 20px;
     font-weight: normal;
     position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* border-bottom: 1px solid #e6e6e6; */
     height: 70px;
 }
-/* 
-.favlist > li:nth-child{
-    padding: 5px;
-    color: rebeccapurple;
-    font-weight: bold;
-    /* background: #86d3f7; */
-/* }  */
-
 .favlist > li > span{
     display: block;
 }
@@ -90,16 +80,14 @@
     font-weight:  bold;
     cursor:  pointer;
 } 
-/* .modal-favorites {
-  max-height: 500px;
-}
 
 .favl > ul{
   list-style-type: none;
   padding: 0;
-}  */
+}  
 
 .brand-logo > span{
   font-size: 1.5rem;
   color: black;
 }
+
