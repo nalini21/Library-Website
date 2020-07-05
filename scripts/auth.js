@@ -7,19 +7,44 @@ auth.onAuthStateChanged(user => {
             document.querySelectorAll('.editButton').forEach(item => {
                 item.addEventListener('click', (event) => {
                     event.preventDefault();
-                    const id = item.getAttribute('bookId');
-                    console.log(id);
                     console.log('clicked edit button');
+                    const id = item.getAttribute('bookId'); 
+                    document.querySelector('.editSubmit').setAttribute('id',id);                 
+                });
+            });
+            document.querySelectorAll('.editSubmit').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                     let id=event.target.getAttribute('id');
+                    const editForm = document.querySelector('#edit-form');
+                    db.collection('books').doc(id).update({
+                        status: editForm['issuestatus'].value,
+                        issuedBy: editForm['issuedby'].value,
+                        issueDate: editForm['issuedate'].value,
+                        phone: editForm['contact'].value,
+                    }); 
+                    const modal = document.querySelector('#modal-edit');
+                    M.Modal.getInstance(modal).close();
+                    editForm.reset();
+                    //console.log(id);              
                 });
             });
             document.querySelectorAll('.saveButton').forEach(item => {
+
+                db.collection('users').doc(user.uid).collection('favorites').onSnapshot(snapshot => {
+                    snapshot.docs.forEach(doc => {
+                        if (item.id === doc.id) {
+                            item.setAttribute("class", "material-icons saveButton clicked");
+                        }
+                    });
+                });
                 item.addEventListener('click', (event) => {
                     event.preventDefault();
                     item.setAttribute("class", "material-icons saveButton clicked");
                     console.log('clicked save button');
-                    let id=item.id;
+                    let id = item.id;
                     var user = auth.currentUser;
-                    db.collection('users').doc(user.uid).collection('favorites').doc(id).set({                   
+                    db.collection('users').doc(user.uid).collection('favorites').doc(id).set({
                     }).then(() => {
                         console.log('users collection updated')
                     }).catch(error => {
@@ -33,7 +58,7 @@ auth.onAuthStateChanged(user => {
         });
 
         db.collection('users').doc(user.uid).collection('favorites').onSnapshot(snapshot => {
-            setupFav(snapshot.docs,user);
+            setupFav(snapshot.docs, user);
         }, err => {
             console.log(err.message);
         });
@@ -41,7 +66,7 @@ auth.onAuthStateChanged(user => {
     }
     else {
         setupUI();
-        setupBooks([]);
+        setupBooks();
         console.log('user is logged out');
     }
 });

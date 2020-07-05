@@ -80,12 +80,10 @@ const setupBooks = (data) => {
         data.forEach(doc => {
             const book = doc.data();
             let cls = '';
-            if (book.status === "false") {
+            if (book.status === "false") 
                 cls = "available";
-            }
-            else {
-                cls = "issued"
-            }
+            else 
+                cls = "issued";
             let li = `
         <li>
             <div class="collapsible-header grey-lighten-4 ${cls}">
@@ -102,7 +100,7 @@ const setupBooks = (data) => {
                 <p class="issueData">Issue Date:  ${book.issueDate}</p>
                 <p class="issueData">Phone number: ${book.phone}</p>
             </div>  
-            <a href="#" class="btn-small btn-floating editButton" bookId="${doc.id}"> 
+            <a href="#" class="btn-small btn-floating editButton modal-trigger" data-target="modal-edit" bookId="${doc.id}"> 
             <i class="material-icons">create</i> 
             </a>  
             </div>
@@ -120,7 +118,7 @@ const setupBooks = (data) => {
 }
 
 
-const setupFav = (data,user) => {
+const setupFav = (data, user) => {
     userID = user.uid;
     if (data.length) {
         favList.innerHTML = ``;
@@ -129,9 +127,9 @@ const setupFav = (data,user) => {
             let name = document.createElement('span');
             let author = document.createElement('span');
             let cross = document.createElement('div');
-            cross.textContent=('x');
+            cross.textContent = ('x');
             const bookID = doc.id;
-            li.setAttribute('id',bookID);
+            li.setAttribute('id', bookID);
             db.collection('books').doc(bookID).get().then(doc => {
                 name.textContent = doc.data().name;
                 author.textContent = doc.data().author;
@@ -141,11 +139,13 @@ const setupFav = (data,user) => {
             li.appendChild(cross);
             favList.appendChild(li);
             //deleting bookmarked book
-            cross.addEventListener('click',(evt)=>{
+            cross.addEventListener('click', (evt) => {
                 evt.preventDefault();
-                let id=evt.target.parentElement.getAttribute('id');
+                
+                let id = evt.target.parentElement.getAttribute('id');
                 db.collection('users').doc(userID).collection('favorites').doc(id).delete();
                 console.log('bookmarked collection updated');
+                
             })
         });
 

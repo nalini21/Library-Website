@@ -124,6 +124,32 @@
     </div>
   </div>
 
+  <!-- edit book modal -->
+  <div id="modal-edit" class="modal">
+    <div class="modal-content">
+      <h4 class="pink-text" style="font-weight: bold;">Edit Book Issue Details</h4><br />
+      <form id="edit-form">
+        <div class="input-field">
+          <input type="text" id="issuestatus" required>
+          <label for="issuedstatus">Issue status (true if issuing,false if returning)</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="issuedby">
+          <label for="issuedby">Issued By (name and roll number)</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="issuedate">
+          <label for="issuedate">Issue Date</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="contact">
+          <label for="contact">Contact (room no. & phone no. & email)</label>
+        </div>
+        <button class="btn blue waves-effect waves-light editSubmit">edit</button>
+      </form>
+    </div>
+  </div>
+
   <!-- BOOK LIST -->
   <div class="container list" style="margin-top: 40px;">
     <ul class="collapsible z-depth-0 books" style="border: none;">     
