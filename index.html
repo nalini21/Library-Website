@@ -9,35 +9,34 @@
   <title>BRH Library</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="grey lighten-3"">
+<body class="blue lighten-3"">
 
   <!-- NAVBAR -->
-  <nav class="z-depth-0 grey lighten-4">
+  <nav class="z-depth-0 blue lighten-1">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">
-        <!-- <img src="img/logo.svg" style="width: 180px; margin-top: 10px;"> -->
-      </a>
+        <img src="images/triel2.png" style="width: 160px; height: 40px; margin-top: 10px;"></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="logged-in ver" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-ver">Verify</a>
+        <li class="logged-in ver" style="display: none;">
+            <a href="#" class="white-text modal-trigger" data-target="modal-ver">Verify</a>
           </li>
           <li class="logged-in" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+            <a href="#" class="white-text modal-trigger" style=" font-weight: lighter;" data-target="modal-account">ACCOUNT</a>
           </li>
           <li class="logged-in fav" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-favorites">Bookmarked</a>
+            <a href="#" class="white-text modal-trigger" style=" font-weight: lighter;" data-target="modal-favorites">BOOKMARKED</a>
           </li>
           <li class="logged-in" style="display: none;">
-            <a href="#" class="grey-text" id="logout">Logout</a>
+            <a href="#" class="white-text" id="logout" style=" font-weight: lighter;">LOGOUT</a>
           </li>
           <li class="logged-in add" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-add">Add Book</a>
+            <a href="#" class="white-text modal-trigger" style=" font-weight: lighter;" data-target="modal-add" >ADD BOOK</a>
           </li>
           <li class="logged-out" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+            <a href="#" class="white-text modal-trigger" style=" font-weight: lighter;" data-target="modal-login">LOGIN</a>
           </li>
           <li class="logged-out" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Register</a>
+            <a href="#" class="white-text modal-trigger" style=" font-weight: lighter;" data-target="modal-signup">REGISTER</a>
           </li>
         </span>
       </ul>
@@ -89,8 +88,8 @@
 
   <!-- FAVORITES MODAL -->
   <div id="modal-favorites" class="modal">
-    <div class="modal-content center-align" id="favoritesData">
-        <ul class="favlist"></ul>
+    <div class="modal-content center-align favl" id="favoritesData">
+        <div class="content"><ul class="favlist"></ul></div>
       </div>
     </div>
   
@@ -109,7 +108,7 @@
   <!-- ADD BOOK MODAL -->
   <div id="modal-add" class="modal">
     <div class="modal-content">
-      <h4>Add Book</h4><br />
+      <h4 class="orange-text" style="font-weight: bold;">Add Book</h4><br />
       <form id="add-form">
         <div class="input-field">
           <input type="text" id="title" required>
@@ -119,17 +118,43 @@
           <textarea id="author" class="materialize-textarea" required></textarea>
           <label for="author">Book Author</label>
         </div>
-        <button class="btn yellow darken-2 z-depth-0">add</button>
+        <button class="btn orange waves-effect waves-light">add</button>
       </form>
     </div>
   </div>
 
   <!-- BOOK LIST -->
   <div class="container list" style="margin-top: 40px;">
-    <ul class="collapsible z-depth-0 books" style="border: none;">
-      
+    <ul class="collapsible z-depth-0 books" style="border: none;">     
     </ul>
   </div>
+
+  <!-- footer -->
+  <footer class="page-footer blue lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/nalini21">github</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2014 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>

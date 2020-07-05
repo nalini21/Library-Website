@@ -120,26 +120,33 @@ const setupBooks = (data) => {
 }
 
 
-const setupFav = (data) => {
-
+const setupFav = (data,user) => {
+    userID = user.uid;
     if (data.length) {
         favList.innerHTML = ``;
         data.forEach(doc => {
             let li = document.createElement('li');
             let name = document.createElement('span');
             let author = document.createElement('span');
-            let sp = document.createElement('br');
+            let cross = document.createElement('div');
+            cross.textContent=('x');
             const bookID = doc.id;
+            li.setAttribute('id',bookID);
             db.collection('books').doc(bookID).get().then(doc => {
-                console.log(doc.data().name);
-                console.log(doc.data().author);
                 name.textContent = doc.data().name;
                 author.textContent = doc.data().author;
             });
             li.appendChild(name);
-            li.appendChild(sp);
             li.appendChild(author);
+            li.appendChild(cross);
             favList.appendChild(li);
+            //deleting bookmarked book
+            cross.addEventListener('click',(evt)=>{
+                evt.preventDefault();
+                let id=evt.target.parentElement.getAttribute('id');
+                db.collection('users').doc(userID).collection('favorites').doc(id).delete();
+                console.log('bookmarked collection updated');
+            })
         });
 
     }

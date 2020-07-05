@@ -19,8 +19,7 @@ auth.onAuthStateChanged(user => {
                     console.log('clicked save button');
                     let id=item.id;
                     var user = auth.currentUser;
-                    db.collection('users').doc(user.uid).collection('favorites').doc(id).set({
-                    
+                    db.collection('users').doc(user.uid).collection('favorites').doc(id).set({                   
                     }).then(() => {
                         console.log('users collection updated')
                     }).catch(error => {
@@ -34,7 +33,7 @@ auth.onAuthStateChanged(user => {
         });
 
         db.collection('users').doc(user.uid).collection('favorites').onSnapshot(snapshot => {
-            setupFav(snapshot.docs);
+            setupFav(snapshot.docs,user);
         }, err => {
             console.log(err.message);
         });
