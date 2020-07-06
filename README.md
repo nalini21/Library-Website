@@ -11,10 +11,48 @@
 
 
 <h2>take a look</h2>
-<img align="left" src="images/Screenshot%20(96).png" width="450">
-<img align="right" src="images/Screenshot%20(103).png" width="450"></br>
-<img align="left" src="images/Screenshot%20(97).png" width="450">
-<img align="right" src="images/Screenshot%20(98).png" width="450"></br>
-<img align="left" src="images/Screenshot%20(99).png" width="450">
-<img align="right" src="images/Screenshot%20(100).png" width="450"><br>
-<img align="left" src="images/Screenshot%20(101).png" width="450">
+
+<table>
+  <tr>
+    <td>First Screen Top</td>
+    <td>First Screen Bottom</td>
+  </tr>
+  <tr>
+    <td><img src="images/Screenshot%20(96).png" width=450></td>
+    <td><img src="images/Screenshot%20(102).png" width=450</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>Clicking a book will show it's Issue status</td>
+    <td>Clicking create icon will open Edit Issue status form</td>
+  </tr>
+  <tr>
+    <td><img src="images/Screenshot%20(97).png" width=450></td>
+    <td><img src="images/Screenshot%20(98).png" width=450</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>You can bookmark books and see the bookmarked book list</td>
+    <td>Adding new book</td>
+    <td>Account info</td>
+  </tr>
+  <tr>
+    <td><img src="images/Screenshot%20(99).png" width=450></td>
+    <td><img src="images/Screenshot%20(100).png" width=450</td>
+    <td><img src="images/Screenshot%20(101).png" width=450</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td>Account info</td>
+  </tr>
+  <tr>
+    <td><img src="images/Screenshot%20(101).png" width=450</td>
+  </tr>
+</table>
