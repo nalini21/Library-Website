@@ -9,7 +9,6 @@
   <li><h3>user can bookmark books and see(delete) them in(from) bookmarked list</h3></li>
 </ul>
 
-![img](images/Screenshot(99).png)
 
-<img src="images/Screenshot(96).png" width="200"></img>
-<img src="images/Screenshot(103).png" width="200"></img>
+<img src="images/Screenshot%20(96).png" width="200">
+<img src="images/Screenshot%20(103).png" width="200">
