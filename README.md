@@ -10,5 +10,11 @@
 </ul>
 
 
-<img src="images/Screenshot%20(96).png" width="200">
-<img src="images/Screenshot%20(103).png" width="200">
+<h2>take a look</h2>
+<img align="left" src="images/Screenshot%20(96).png" width="450">
+<img align="right" src="images/Screenshot%20(103).png" width="450">
+<img align="left" src="images/Screenshot%20(97).png" width="450">
+<img align="right" src="images/Screenshot%20(98).png" width="450">
+<img align="left" src="images/Screenshot%20(99).png" width="450">
+<img align="right" src="images/Screenshot%20(100).png" width="450">
+<img align="left" src="images/Screenshot%20(101).png" width="450">
