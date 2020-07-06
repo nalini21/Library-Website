@@ -70,7 +70,7 @@
 <table>
   <tr>
     <td>Bookmark books and see them in bookmarked section</td>
-    <td>Adding new book(only for admin)</td>
+    <td>Adding a new book form(only for admin)</td>
   </tr>
   <tr>
     <td><img src="images/Screenshot%20(99).png" width=450></td>
