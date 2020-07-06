@@ -5,12 +5,13 @@
   <li><h3>authentication based UI</h3></li>
   <li><h3>only email verified users can see the website content</h3></li>
   <li><h3>users can see list of all the books and there issue status details</h3></li>
+  <li><h3>issued books are pink in color whereas available books are in light-blue color</h3></li>
   <li><h3>admin can add new books,update book issue status</h3></li>
   <li><h3>user can bookmark books and see(delete) them in(from) bookmarked list</h3></li>
 </ul>
 
 
-<h2>take a look</h2>
+<ul><h2>take a look</h2></ul>
 
 <table>
   <tr>
