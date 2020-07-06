@@ -25,8 +25,8 @@
 
 <table>
   <tr>
-    <td>Clicking a book will show it's Issue status</td>
-    <td>Clicking create icon will open Edit Issue status form</td>
+    <td>Collapsible list, Showing Issue status details</td>
+    <td>Edit Issue status form for a particular book(only for admin)</td>
   </tr>
   <tr>
     <td><img src="images/Screenshot%20(97).png" width=450></td>
@@ -36,8 +36,8 @@
 
 <table>
   <tr>
-    <td>You can bookmark books and see the bookmarked book list</td>
-    <td>Adding new book</td>
+    <td>Bookmark books and see them in bookmarked section</td>
+    <td>Adding new book(only for admin)</td>
   </tr>
   <tr>
     <td><img src="images/Screenshot%20(99).png" width=450></td>
