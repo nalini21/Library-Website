@@ -38,12 +38,10 @@
   <tr>
     <td>You can bookmark books and see the bookmarked book list</td>
     <td>Adding new book</td>
-    <td>Account info</td>
   </tr>
   <tr>
     <td><img src="images/Screenshot%20(99).png" width=450></td>
     <td><img src="images/Screenshot%20(100).png" width=450</td>
-    <td><img src="images/Screenshot%20(101).png" width=450</td>
   </tr>
 </table>
 
