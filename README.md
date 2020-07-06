@@ -8,5 +8,8 @@
   <li><h3>admin can add new books,update book issue status</h3></li>
   <li><h3>user can bookmark books and see(delete) them in(from) bookmarked list</h3></li>
 </ul>
-<img src="images/Screenshot(96).png"></img>
-<img src="images/Screenshot(103).png"></img>
+
+![img](images/Screenshot(99).png)
+
+<img src="images/Screenshot(96).png" width="200"></img>
+<img src="images/Screenshot(103).png" width="200"></img>
