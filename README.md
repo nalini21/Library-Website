@@ -12,11 +12,43 @@
 
 
 <ul><h2>take a look</h2></ul>
+<table>
+  <tr>
+    <td>First Page</td>
+    <td>Login Form</td>
+  </tr>
+  <tr>
+    <td><img src="images/Screenshot%20(104).png" width=450</td>
+    <td><img src="images/Screenshot%20(105).png" width=450</td>
+  </tr>
+</table>
 
 <table>
   <tr>
-    <td>First Screen Top</td>
-    <td>First Screen Bottom</td>
+    <td>Register form</td>
+    <td>Post Register form</td>
+  </tr>
+  <tr>
+    <td><img src="images/Screenshot%20(106).png" width=450</td>
+    <td><img src="images/Screenshot%20(107).png" width=450</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>Send verification link or delete the account</td>
+    <td>Account info</td>
+  </tr>
+  <tr>
+    <td><img src="images/Screenshot%20(108).png" width=450</td>
+    <td><img src="images/Screenshot%20(101).png" width=450</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>Post verification Screen Top</td>
+    <td>Screen Bottom</td>
   </tr>
   <tr>
     <td><img src="images/Screenshot%20(96).png" width=450></td>
@@ -43,15 +75,5 @@
   <tr>
     <td><img src="images/Screenshot%20(99).png" width=450></td>
     <td><img src="images/Screenshot%20(100).png" width=450</td>
-  </tr>
-</table>
-
-
-<table>
-  <tr>
-    <td>Account info</td>
-  </tr>
-  <tr>
-    <td><img src="images/Screenshot%20(101).png" width=450</td>
   </tr>
 </table>
