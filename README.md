@@ -1,7 +1,7 @@
 # library-website
 
 <h2>https://brh-library.firebaseapp.com</h2>
-<ul><h2>features</h2>
+<ul><h2>FEATURES</h2>
   <li><h3>authentication based UI</h3></li>
   <li><h3>only email verified users can see the website content</h3></li>
   <li><h3>users can see list of all the books and there issue status details</h3></li>
@@ -11,7 +11,7 @@
 </ul>
 
 
-<ul><h2>take a look</h2></ul>
+<ul><h2>TAKE A LOOK HERE</h2></ul>
 <table>
   <tr>
     <td>First Page</td>
