@@ -77,3 +77,5 @@
     <td><img src="images/Screenshot%20(100).png" width=450</td>
   </tr>
 </table>
+
+<ul><h2> TODOs: </h2><li>searchbar</li><li>book category filter search</li> </ul>
