@@ -78,4 +78,4 @@
   </tr>
 </table>
 
-<ul><h3> TODOs: </h2><li><p>searchbar</h3></li><li><h3>book category filter search</p></li> </ul>
+<ul><h3> TODOs: </h2><li><p>searchbar</p></li><li><p>book category filter search</p></li> </ul>
