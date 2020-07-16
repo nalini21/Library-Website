@@ -1,7 +1,7 @@
 # library-website
 
 <h2>https://brh-library.firebaseapp.com</h2>
-<ul><h2>FEATURES</h2>
+<ul><h3>FEATURES</h3>
   <li><p>authentication based UI</p></li>
   <li><p>only email verified users can see the website content</p></li>
   <li><p>users can see list of all the books and there issue status details</p></li>
@@ -78,4 +78,4 @@
   </tr>
 </table>
 
-<ul><h2> TODOs: </h2><li><h3>searchbar</h3></li><li><h3>book category filter search</h3></li> </ul>
+<ul><h3> TODOs: </h2><li><p>searchbar</h3></li><li><h3>book category filter search</p></li> </ul>
