@@ -1,5 +1,5 @@
 # library-website
-
+<p>This website is just a model for now (actual data of books and their issue details of my hostel library is not fedded in this website yet)
 <h2>https://brh-library.firebaseapp.com</h2>
 <ul><h3>FEATURES</h3>
   <li><p>authentication based UI</p></li>
